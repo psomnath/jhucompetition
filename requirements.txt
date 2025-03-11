@@ -2,7 +2,7 @@ pandas == 1.5.3
 numpy == 1.26.4
 matplotlib
 streamlit
-#streamlit_option_menu
-#streamlit-extras
-# st-gsheets-connection
+streamlit_option_menu
+streamlit-extras
+st-gsheets-connection
 scikit-learn
