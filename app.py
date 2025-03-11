@@ -65,7 +65,7 @@ minutes = (seconds % 3600) // 60
 with st.sidebar:
     #st.image("./savila_games_logo.png")
     selected = option_menu(
-        menu_title='JHU Competition - Computational Drug Discovery,Dev - 605.656',
+        menu_title='Welcome',
         options= ['Login','Rankings','My group Submissions','Submit Results'],
         icons=['bi bi-person-fill-lock', '123','bi bi-database','bi bi-graph-up-arrow'], menu_icon="cast"
     )
@@ -81,7 +81,7 @@ with st.sidebar:
 
 if selected == 'Login':
    
-   st.header('Welcome to your Final group project Challenge')
+   st.header('JHU Competition - Computational Drug Discovery,Dev - 605.656')
    st.divider()
    st.subheader(f" Time remaining: {days} days, {hours} hours and {minutes} minutes")
    st.divider()
