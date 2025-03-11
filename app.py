@@ -63,9 +63,9 @@ minutes = (seconds % 3600) // 60
 
 # emojis are obtained from bootstrap icons https://icons.getbootstrap.com/
 with st.sidebar:
-    st.image("./savila_games_logo.png")
+    #st.image("./savila_games_logo.png")
     selected = option_menu(
-        menu_title='MEDIUM APP',
+        menu_title='JHU Competition - Computational Drug Discovery,Dev - 605.656',
         options= ['Login','Rankings','My group Submissions','Submit Results'],
         icons=['bi bi-person-fill-lock', '123','bi bi-database','bi bi-graph-up-arrow'], menu_icon="cast"
     )
