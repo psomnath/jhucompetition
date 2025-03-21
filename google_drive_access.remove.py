@@ -1,3 +1,9 @@
+# pip install google-api-python-client
+
+# conda install conda-forge::google-api-python-client
+# conda install conda-forge::google-auth-oauthlib
+# Checkout the instruction in this youtube video - https://www.youtube.com/watch?v=tamT_iGoZDQ
+
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow

@@ -76,6 +76,8 @@ def read_files(file_name,user_id = '',config=config):
                     fetched_file_content.seek(0)
                     if fetched_file_mime_type == 'text/plain':
                         fetched_file_content = fetched_file_content.getvalue().decode('utf-8')
+                    if fetched_file_extension == 'csv':
+                        fetched_file_content = io.StringIO(fetched_file_content) 
                     fetched_file_list.append({'file_name' : fetched_file_name, 'file_id' : fetched_file_id, 'file_content': fetched_file_content\
                         , 'mime_type' : fetched_file_mime_type,'file_extension':fetched_file_extension})
                     
@@ -91,18 +93,19 @@ print(status, file_name,error)
 status, file_name,error = write_file('random_model.pkl',user_id = 'spurkay1',duplicate_allowed=True)
 print(status, file_name,error)'''
 
-#fetched_files = read_files('accounts.csv',user_id = '',config=config)
+'''#fetched_files = read_files('accounts.csv',user_id = '',config=config)
 fetched_file_list = read_files('accounts.csv')
 for fetched_file in fetched_file_list:
-    df = pd.DataFrame(fetched_file['file_content'])
-    print(df)
+    df = pd.read_csv(fetched_file['file_content'])
+    print(df.head(1))'''
     
-'''#fetched_files = read_files('Customers.csv',user_id = '',config=config)
-fetched_files = read_files('Customers.csv',config=config)
-for fetched_file in fetched_files:
-    print(fetched_file)
+'''#fetched_file_list = read_files('Customers.csv',user_id = '',config=config)
+fetched_file_list = read_files('Customers.csv',config=config)
+for fetched_file in fetched_file_list:
+    df = pd.read_csv(fetched_file['file_content'])
+    print(df.head(1))'''
 
-#fetched_files = read_files('random_model.pkl',user_id = 'spurkay1',config=config)
-fetched_files = read_files('random_model.pkl',user_id = 'spurkay1')
-for fetched_file in fetched_files:
-    print(fetched_file)'''
+#fetched_file_list = read_files('random_model.pkl',user_id = 'spurkay1',config=config)
+fetched_file_list = read_files('random_model.pkl',user_id = 'spurkay1')
+for fetched_file in fetched_file_list:
+    print(fetched_file)
